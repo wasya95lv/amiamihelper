@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "Amiami helper",
+    "version": "0.1.0",
+    "description": "Helps to gather data about figure in one click",
+    "permissions": [
+        "activeTab",
+        "tabs"
+    ],
+    "content_scripts": [
+        {
+            "js": [
+                "scripts/content.js"
+            ],
+            "matches": [
+                "https://*.amiami.com/*"
+            ]
+        }
+    ],
+
+    "background": {
+        "service_worker": "scripts/background.js"
+      },
+
+    "action": {
+        "default_popup": "popup/popup.html"
+      }
+}
